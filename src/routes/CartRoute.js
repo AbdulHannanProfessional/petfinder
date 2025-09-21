@@ -8,6 +8,7 @@ const {
   addItemsToCart,
   updateCart,
   deleteItemByCart,
+  deleteCart
 } = require("../controllers/CartController.js");
 const { protect } = require("../middleware/authMiddleware.js"); // adjust to your auth middleware
 
@@ -25,5 +26,6 @@ router.put("/:id", protect, updateCart);
 
 // ✅ Remove item
 router.delete("/:id", protect, deleteItemByCart);
+router.delete("/", protect, deleteCart)
 
 module.exports = router;
