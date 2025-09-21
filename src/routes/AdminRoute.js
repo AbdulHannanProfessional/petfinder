@@ -95,7 +95,8 @@ router.post("/pets", protect, upload.array("images"), async (req, res) => {
       animal: req.body.animal?.toLowerCase(),
       state: req.body.state?.toUpperCase(),
       images: req.files?.map(
-        (file) => `http://localhost:4001/uploads/pets/${file.filename}`
+        (file) =>
+          `https://petfinder-2hai.onrender.com/uploads/pets/${file.filename}`
       ),
     };
 
